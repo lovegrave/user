@@ -7,23 +7,21 @@ spring:
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://127.0.0.1:3306/huangdemo?characterEncoding=utf-8&&useSSL=false&allowMultiQueries=true
       name: localhost_3306
-#  cache:
-#     ehcache:
-#       config: classpath:cache/ehcache.xml
-#     type: ehcache
+  cache:
+     ehcache:
+       config: classpath:cache/ehcache.xml
+     type: ehcache
   redis:
-      host: kitchen-redis
+      host: 127.0.0.1
       database: 0
       port: 6379
       password:
-      timeout: 1000
-
       jedis:
-        pool:
-          max-active: 8
-          max-wait: -1
-          max-idle: 8
-          min-idle: 0
+        max-wait: -1
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        timeout: 1000
   jackson:
       date-format: yyyy-MM-dd HH:mm:ss
       time-zone: GMT+8
